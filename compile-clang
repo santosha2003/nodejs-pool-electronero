@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+git pull origin master
+   # compile host and device code with clang
+mkdir build
+cd build
+ export CUDA_ROOT=/compat/linux/usr/local/cuda-8.0
+    export CC=/usr/bin/clang
+    export CXX=/usr/bin/clang++
+cmake .. -DCUDA_COMPILER=clang -DCUDA_INCLUDE_DIRS=/compat/linux/usr/local/cuda-8.0/include/ -DCUDA_CUDART_LIBRARY=/compat/linux/usr/local/cuda-8.0/lib64
